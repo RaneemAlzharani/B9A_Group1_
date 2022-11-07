@@ -1,5 +1,16 @@
-package Project_lab251;
- 
+package project_lab251;
+
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author DELL
+ */
 public class Supplies {
     
     String name;
@@ -45,6 +56,6 @@ public class Supplies {
     }
     
     public String toString() {
-        return name+" "+price;
+        return name+" "+price+" "+quantity+" "+days;
     }
 }
