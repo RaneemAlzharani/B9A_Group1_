@@ -14,11 +14,12 @@ package project_lab251;
 public class Supplies {
     
     String name;
-    int price;
+    double price;
     int quantity;
     boolean inStock; 
     int days;
-    public Supplies(String name, int price, int quantity, int days ) {
+    
+    public Supplies(String name, double price, int quantity, int days ) {
         this.name=name;
         this.price=price;
         this.quantity=quantity;
@@ -33,11 +34,11 @@ public class Supplies {
     public String getName() {
         return name;
     }
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
     public void setQuantity(int quantity) {
