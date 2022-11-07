@@ -28,8 +28,7 @@ public class Project_lab251 {
                    + "\n 3.             \n 4.        \n Enter number (Enter 0 to exit): ");
               ch=scanner.nextInt();
               if(ch==1){
-                  Project_lab251 b = new Project_lab251();
-                  String result = b.rentProudct(table,  chair, speaker );
+                  rentProudct(table,chair,speaker);
               }else if(ch==2){
                   updateSupplies(table,chair,speaker);
               }else if(ch==3){
@@ -160,7 +159,7 @@ public class Project_lab251 {
 
  
    }
-        private String rentProudct(ArrayList<Supplies> table, ArrayList<Supplies> chair, ArrayList<Supplies> speaker){
+        private static void  rentProudct(ArrayList<Supplies> table, ArrayList<Supplies> chair, ArrayList<Supplies> speaker){
            Scanner scanner = new Scanner(System.in);
     System.out.println("choose what do you want to rent 1.Tables  2.Chairs  3.Speakers");
               int answer = scanner.nextInt();
@@ -226,7 +225,7 @@ public class Project_lab251 {
                         break;
                     }
             }
-        return null;
+     
 }
 }
 
