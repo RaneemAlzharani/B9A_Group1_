@@ -160,7 +160,7 @@ public class Project_lab251 {
 
  
    }
-       public String rentProudct(ArrayList<Supplies> table, ArrayList<Supplies> chair, ArrayList<Supplies> speaker){
+        private String rentProudct(ArrayList<Supplies> table, ArrayList<Supplies> chair, ArrayList<Supplies> speaker){
            Scanner scanner = new Scanner(System.in);
     System.out.println("choose what do you want to rent 1.Tables  2.Chairs  3.Speakers");
               int answer = scanner.nextInt();
