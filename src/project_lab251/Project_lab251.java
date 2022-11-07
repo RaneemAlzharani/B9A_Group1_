@@ -24,8 +24,8 @@ public class Project_lab251 {
        int ch=0;
        // this loop to start the program
        while(restart){
-           System.out.print("4-Functional Requirement\n 1. Rent product \n 2. Update supplies"
-                   + "\n 3.             \n 4.        \n Enter number (Enter 0 to exit): ");
+           System.out.print("\n4-Functional Requirement\n 1. Rent product \n 2. Update supplies"
+                   + "\n 3. Modify renting information\n 4. Rating \n Enter number (Enter 0 to exit): ");
               ch=scanner.nextInt();
               if(ch==1){
                   rentProudct(table,chair,speaker);
@@ -34,6 +34,7 @@ public class Project_lab251 {
               }else if(ch==3){
                   
               }else if(ch==4){
+                  serviceRating();
                   
               }else{
                   restart=false;
@@ -49,12 +50,13 @@ public class Project_lab251 {
        private static void updateSupplies(ArrayList<Supplies> table, ArrayList<Supplies> chair, ArrayList<Supplies> speaker){
        System.out.print("Enter colection that you want to update 1.Tables  2.Chairs  3.Speakers \nEnter number: ");
        Scanner scanner = new Scanner(System.in);
+       Scanner scanner1 = new Scanner(System.in);
         int collection= scanner.nextInt();
-        System.out.print("Choose what do you want to update: \n Change info. \n "
+        System.out.print("\n\nChoose what do you want to update: \n Change info. \n "
                                 + " 1. Rename an item \n  2. Change price"
                                 + "\n------------------------------------------------\n"+
                                 "  3. Add new item \n  4. Delete item  "
-                                +  "\n------------------------------------------------"+"\nEnter number: ");
+                                +  "\n------------------------------------------------"+"\nEnter number : ");
         int choose= scanner.nextInt();
         int item=0;
             switch (collection) {
@@ -72,7 +74,7 @@ public class Project_lab251 {
                          }
                          if(choose==1){
                             System.out.print("Enter new name:");
-                            String name=scanner.next();
+                            String name=scanner1.nextLine();
                             table.get(item).setName(name);
                          }else if(choose==2){
                             System.out.print("Enter new price:");
@@ -80,15 +82,14 @@ public class Project_lab251 {
                             table.get(item).setPrice(newPrice);
                          }else if(choose==3){
                             System.out.print("Enter a name for new item:");
-                            String name=scanner.next();
-                            System.out.print("Enter a price for new item:");
+                            String name=scanner1.nextLine();
+                            System.out.print("\nEnter a price for new item:");
                             int Price=scanner.nextInt();
                             table.add(new Supplies(name,Price,0,0));
                          }else{
                             table.remove(item);
                             System.out.println("Item deleted successfully. ");
                          }
-                        
                           break;
                     }
                 case 2:
@@ -103,7 +104,7 @@ public class Project_lab251 {
                         }
                         if(choose==1){
                             System.out.print("Enter new name:");
-                            String name=scanner.next();
+                            String name=scanner1.nextLine();
                             chair.get(item).setName(name);
                         }else if(choose==2){
                             System.out.print("Enter new price:");
@@ -111,8 +112,8 @@ public class Project_lab251 {
                             chair.get(item).setPrice(newPrice);
                         }else if(choose==3){
                             System.out.print("Enter a name for new item:");
-                            String name=scanner.next();
-                            System.out.print("Enter a price for new item:");
+                            String name=scanner1.nextLine();
+                            System.out.print("\nEnter a price for new item:");
                             int Price=scanner.nextInt();
                             chair.add(new Supplies(name,Price,0,0));
                         }else{
@@ -133,7 +134,7 @@ public class Project_lab251 {
                          }
                          if(choose==1){
                             System.out.print("Enter new name:");
-                            String name=scanner.next();
+                            String name=scanner1.nextLine();
                             speaker.get(item).setName(name);
                          }else if(choose==2){
                              System.out.print("Enter new price:");
@@ -141,8 +142,8 @@ public class Project_lab251 {
                             speaker.get(item).setPrice(newPrice);
                          }else if(choose==3){
                             System.out.print("Enter a name for new item:");
-                            String name=scanner.next();
-                            System.out.print("Enter a price for new item:");
+                            String name=scanner1.nextLine();
+                            System.out.print("\nEnter a price for new item:");
                             int Price=scanner.nextInt();
                             speaker.add(new Supplies(name,Price,0,0));
                          }else{
@@ -152,9 +153,14 @@ public class Project_lab251 {
                       break;
                     } 
     
-      
+            
    
    }
+    
+
+ 
+   
+    
     
 
  
