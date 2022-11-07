@@ -42,6 +42,8 @@ public class Project_lab251 {
        }
        
        
+     
+
        
     }
        private static void updateSupplies(ArrayList<Supplies> table, ArrayList<Supplies> chair, ArrayList<Supplies> speaker){
@@ -157,5 +159,73 @@ public class Project_lab251 {
 
  
    }
+       public String rentProudct(ArrayList<Supplies> table, ArrayList<Supplies> chair, ArrayList<Supplies> speaker){
+           Scanner scanner = new Scanner(System.in);
+    System.out.println("choose what do you want to rent 1.Tables  2.Chairs  3.Speakers");
+              int answer = scanner.nextInt();
+            switch (answer) {
+                case 1:
+                    {
+                        
+                        System.out.println("Available tables :");
+                        for(int i=0;i<table.size();i++){
+                            System.out.println(i+1+"."+table.get(i).toString());
+                        }
+                        int chTable = scanner.nextInt();
+                        chTable=chTable-1;
+                        int tablePrice = table.get(chTable).price;
+                        System.out.println("How many table do you want?");
+                        int numTable = scanner.nextInt();
+                        table.get(chTable).setQuantity(numTable);
+                        System.out.println("How many days do you need it?");
+                        int dayTable = scanner.nextInt();
+                        int amount = (tablePrice * numTable) * dayTable;
+                        table.get(chTable).setPrice(amount);
+                        System.out.println("Your total amount is"+ amount);
+                        break;
+                    }
+                case 2:
+                    {
+                        
+                        System.out.println("Available chairs :");
+                        for(int i=0;i<chair.size();i++){
+                            System.out.println(i+1+"."+chair.get(i).toString());  
+                        }
+                        int chChair = scanner.nextInt();
+                        chChair=chChair-1;
+                        int chairPrice = chair.get(chChair).price;
+                        System.out.println("How many chair do you want?");
+                        int numChair = scanner.nextInt();
+                        chair.get(chChair).setQuantity(chChair);
+                        System.out.println("How many days do you need it?");
+                        int dayChair = scanner.nextInt();
+                        int amount = (chairPrice * numChair) * dayChair;
+                        chair.get(chChair).setPrice(amount);
+                        System.out.println("Your total amount is"+ amount);
+                        break;
+                    }
+                case 3:
+                    {
+                        
+                            System.out.println("Available speakers :");
+                            for(int i=0;i<speaker.size();i++){
+                            System.out.println(i+1+"."+speaker.get(i).toString());  
+                            }
+                            int chspeaker = scanner.nextInt();
+                            chspeaker=chspeaker-1;
+                            int speakerPrice = speaker.get(chspeaker).price;
+                            System.out.println("How many speaker do you want?");
+                            int numSpeaker = scanner.nextInt();
+                            speaker.get(chspeaker).setQuantity(chspeaker);
+                            System.out.println("How many days do you need it?");
+                            int daySpeaker = scanner.nextInt();
+                            int amount = (speakerPrice * numSpeaker )* daySpeaker;
+                            speaker.get(chspeaker).setPrice(amount);
+                            System.out.println("Your total amount is"+ amount);
+                        break;
+                    }
+            }
+        return null;
+}
 }
 
