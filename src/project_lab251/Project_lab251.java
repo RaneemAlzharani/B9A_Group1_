@@ -28,7 +28,8 @@ public class Project_lab251 {
                    + "\n 3.             \n 4.        \n Enter number (Enter 0 to exit): ");
               ch=scanner.nextInt();
               if(ch==1){
-                  
+                  Project_lab251 b = new Project_lab251();
+                  String result = b.rentProudct(table,  chair, speaker );
               }else if(ch==2){
                   updateSupplies(table,chair,speaker);
               }else if(ch==3){
