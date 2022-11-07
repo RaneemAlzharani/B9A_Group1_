@@ -158,5 +158,16 @@ public class SuppliesTest {
         String result2=item2.toString();
         assertEquals(expResult2, result2);
     }
-    
+    @Test
+    public void testRentProudctAmount() {
+        // Rename an item
+        Supplies item=new Supplies("black chair",30,0,0);
+        int quantity = 4;
+        int days = 2;
+        item.setPrice(60);
+        int expResult1 = 480;
+        int result1 = (item.getPrice() * quantity) * days ;
+        assertEquals(expResult1, result1);
+        
+    }
 }
