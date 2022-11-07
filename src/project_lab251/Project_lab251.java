@@ -227,5 +227,22 @@ public class Project_lab251 {
             }
      
 }
+        public static void serviceRating(){
+       System.out.println("Thank you for visiting our store.\nPlease rate your experience on a scale from 1(unhappy) to 10(happy): ");
+       Scanner scanner = new Scanner(System.in);
+       int rating= scanner.nextInt();
+       
+       if(rating == 10){
+           System.out.println("thank you for rating.");
+       }
+       else if(rating <10 || rating > 0){
+           scanner.nextLine();
+           System.out.println("How can we make your experience even better?");
+           String improve = scanner.nextLine();
+           System.out.println("thank you for rating.");
+       }
+       else
+           System.exit(0);
+   }
 }
 
