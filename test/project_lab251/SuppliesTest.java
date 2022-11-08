@@ -36,7 +36,6 @@ public class SuppliesTest {
     public void tearDown() {
     }
     @Test
-    @Ignore
     public void testSetName() {
         System.out.println("setName");
         Supplies item = new Supplies("Round table for 6",100,1,0);
@@ -47,7 +46,6 @@ public class SuppliesTest {
        
     }
     @Test
-    @Ignore
     public void testGetName() {
         System.out.println("getName");
         Supplies item =new Supplies("Round table for 6",100,1,0);;
@@ -70,7 +68,6 @@ public class SuppliesTest {
     }
 
     @Test
-    @Ignore
     public void testGetPrice() {
         System.out.println("getPrice");
         Supplies item = new Supplies("Round table for 6",100,1,2);
@@ -80,7 +77,6 @@ public class SuppliesTest {
     }
 
     @Test
-    @Ignore
     public void testSetQuantity() {
         System.out.println("setQuantity");
         Supplies item = new Supplies("Round table for 6",100,1,7);
@@ -92,7 +88,6 @@ public class SuppliesTest {
 
    
     @Test
-    @Ignore
     public void testGetQuantity() {
         System.out.println("getQuantity");
          Supplies item = new Supplies("Round table for 6",100,40,6);
@@ -103,7 +98,6 @@ public class SuppliesTest {
     }
 
     @Test
-    @Ignore
     public void testSetDays() {
         System.out.println("setDays");
         Supplies item = new Supplies("Round table for 6",100,1,8);
@@ -115,7 +109,6 @@ public class SuppliesTest {
     }
 
     @Test
-    @Ignore
     public void testGetDays() {
         System.out.println("getDays");
         Supplies item = new Supplies("Round table for 6",100,1,8);
@@ -126,17 +119,7 @@ public class SuppliesTest {
         
     }
 
-    @Test
-    @Ignore
-    public void testToString() {
-        System.out.println("toString");
-        Supplies item = new Supplies("Round table for 6",100,8,3);
-        String expResult = "Round table for 6 100";
-        item.setPrice(100);
-        String result = item.toString();
-        assertEquals(expResult, result);
-       
-    }
+    
     @Test
     public void testUpdateSupplies() {
         // Rename an item
@@ -153,10 +136,15 @@ public class SuppliesTest {
         //add item
          Supplies item2=new Supplies(null,0,0,0);
         item2.setName("Pink chair");
-        item2.setPrice(20);
-        String expResult2= "Pink chair 20";
+        item2.setPrice(30);
+        String expResult2= "Pink chair 30.0 0 0";
         String result2=item2.toString();
         assertEquals(expResult2, result2);
+        
+        //change item quantity
+        int item_quantity = 0;
+        int result1_quantity = item.getQuantity();
+        assertEquals(item_quantity, result1_quantity);
     }
     @Test
     public void testRentProudctAmount() {

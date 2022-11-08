@@ -41,7 +41,7 @@ public class Project_lab251 {
               }else if(ch==2){
                   updateSupplies(table,chair,speaker);
               }else if(ch==3){
-                  
+                  updateSupplies(table,chair,speaker);
               }else if(ch==4){
                   serviceRating();
                   
