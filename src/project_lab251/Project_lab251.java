@@ -29,6 +29,32 @@ public class Project_lab251 {
         ArrayList<Supplies>speaker = new ArrayList<>();
         speaker.add(new Supplies("Big Speaker",120.0,1,0));
         speaker.add(new Supplies("Small Speaker",120.0,1,0));
+        
+        boolean restart = true;
+       while(restart){
+           System.out.print("\n4-Functional Requirement\n 1. Rent product \n 2. Update supplies"
+                   + "\n 3. Modify renting information\n 4. Rating \n Enter number (Enter 0 to exit): ");
+              
+            int ch=scanner.nextInt();
+              if(ch==1){
+                  rentProudct(table,chair,speaker);
+              }else if(ch==2){
+                  updateSupplies(table,chair,speaker);
+              }else if(ch==3){
+                  
+              }else if(ch==4){
+                  serviceRating();
+                  
+              }else{
+                  restart=false;
+              }
+           
+       }
+        
+       
+    }
+    public static void rentProudct(ArrayList<Supplies> table, ArrayList<Supplies> chair, ArrayList<Supplies> speaker){
+    	Scanner scanner = new Scanner(System.in);
         int answer = -1;
         do{
         System.out.println("choose what do you want to rent \n1.Tables  \n2.Chairs  \n3.Speakers  \n4.Update  \n0. Exit.");
@@ -150,151 +176,8 @@ public class Project_lab251 {
         }
         } while(answer != 0);
         
-        
-        
-       /**  boolean restart = true;
-       while(restart){
-       }
-        */
-       
-    }
-    public static void rentProudct(ArrayList<Supplies> table, ArrayList<Supplies> chair, ArrayList<Supplies> speaker){
-    	Scanner scanner = new Scanner(System.in);
-        
 	}
 
-//   private static void updateSupplies(ArrayList<Supplies> table, ArrayList<Supplies> chair, ArrayList<Supplies> speaker){
-//        while (true) {
-//            System.out.print("Enter collection that you want to update or exit: 1.Tables  2.Chairs  3.Speakers  4.Exit \nEnter number: ");
-//            Scanner scanner = new Scanner(System.in);
-//            int collection= scanner.nextInt();
-//            System.out.print("Choose what do you want to update: \n Change info. \n "
-//                    + " 1. Rename an item \n  2. Change price \n  3. Change quantity \n  4. change days"
-//                    + "\n------------------------------------------------\n"+
-//                    "  5. Add new item \n  6. Delete item"
-//                    +  "\n------------------------------------------------"+"\nEnter number: ");
-//            int choose= scanner.nextInt();
-//            int item=0;
-//            switch (collection) {
-//                case 1:
-//                {
-//                    if(choose==1||choose==2||choose==4){
-//                        for(int i=0;i<table.size();i++){
-//                            System.out.println(i+1+"."+table.get(i).toString());
-//                        }
-//                        System.out.print("Enter item number :");
-//                        item= scanner.nextInt();
-//                        item=item-1;
-//                    }
-//                    if(choose==1){
-//                        System.out.print("Enter new name:");
-//                        String name=scanner.next();
-//                        table.get(item).setName(name);
-//                    }else if(choose==2){
-//                        System.out.print("Enter new price:");
-//                        int newPrice=scanner.nextInt();
-//                        table.get(item).setPrice(newPrice);
-//                    }else if(choose==3){
-//                        System.out.print("Enter new quantity:");
-//                        int newQuantity=scanner.nextInt();
-//                        table.get(item).setQuantity(newQuantity);
-//                    }else if(choose==4){
-//                        System.out.print("Enter new days:");
-//                        int newDays=scanner.nextInt();
-//                        table.get(item).setDays(newDays);
-//                    }else if(choose==5){
-//                        System.out.print("Enter a name for new item:");
-//                        String name=scanner.next();
-//                        System.out.print("Enter a price for new item:");
-//                        int Price=scanner.nextInt();
-//                        table.add(new Supplies(name,Price,0,0));
-//                    }else if(choose==6){
-//                        table.remove(item);
-//                        System.out.println("Item deleted successfully. ");
-//                    }else {
-//                        System.out.println("The number you entered not in the range.");
-//                    }
-//                    break;
-//                }
-//                case 2:
-//                {
-//                    if(choose==1||choose==2||choose==4){
-//                        for(int i=0;i<chair.size();i++){
-//                            System.out.println(i+1+"."+chair.get(i).toString());
-//                        }
-//                        System.out.print("Enter item number:");
-//                        item= scanner.nextInt();
-//                        item=item-1;
-//                    }
-//                    if(choose==1){
-//                        System.out.print("Enter new name:");
-//                        String name=scanner.next();
-//                        chair.get(item).setName(name);
-//                    }else if(choose==2){
-//                        System.out.print("Enter new price:");
-//                        int newPrice=scanner.nextInt();
-//                        chair.get(item).setPrice(newPrice);
-//                    }else if(choose==4){
-//                        System.out.print("Enter new days:");
-//                        int newDays=scanner.nextInt();
-//                        chair.get(item).setDays(newDays);
-//                    }else if(choose==5){
-//                        System.out.print("Enter a name for new item:");
-//                        String name=scanner.next();
-//                        System.out.print("Enter a price for new item:");
-//                        int Price=scanner.nextInt();
-//                        chair.add(new Supplies(name,Price,0,0));
-//                    }else if(choose==6){
-//                        chair.remove(item);
-//                        System.out.println("Item deleted successfully. ");
-//                    }else {
-//                        System.out.println("The number you entered not in the range.");
-//                    }
-//                    break;
-//                }
-//                case 3:
-//                {
-//                    if(choose==1||choose==2||choose==4){
-//                        for(int i=0;i<speaker.size();i++){
-//                            System.out.println(i+1+"."+table.get(i).toString());
-//                        }
-//                        System.out.print("Enter item number:");
-//                        item= scanner.nextInt();
-//                        item=item-1;
-//                    }
-//                    if(choose==1){
-//                        System.out.print("Enter new name:");
-//                        String name=scanner.next();
-//                        speaker.get(item).setName(name);
-//                    }else if(choose==2){
-//                        System.out.print("Enter new price:");
-//                        int newPrice=scanner.nextInt();
-//                        speaker.get(item).setPrice(newPrice);
-//                    }else if(choose==4){
-//                        System.out.print("Enter new days:");
-//                        int newDays=scanner.nextInt();
-//                        speaker.get(item).setDays(newDays);
-//                    }else if(choose==5){
-//                        System.out.print("Enter a name for new item:");
-//                        String name=scanner.next();
-//                        System.out.print("Enter a price for new item:");
-//                        int Price=scanner.nextInt();
-//                        speaker.add(new Supplies(name,Price,0,0));
-//                    }else if(choose==6){
-//                        speaker.remove(item);
-//                        System.out.println("Item deleted successfully. ");
-//                    }else {
-//                        System.out.println("The number you entered not in the range.");
-//                    }
-//                    break;
-//                }
-//                case 4:
-//                {
-//                    return;
-//                }
-//            }
-//        }
-//   }
 
 
     private static void updateSupplies(ArrayList<Supplies> table, ArrayList<Supplies> chair, ArrayList<Supplies> speaker){
@@ -320,14 +203,15 @@ public class Project_lab251 {
 
 
     private static void updateSupplies(ArrayList<Supplies> table, ArrayList<Supplies> chair, ArrayList<Supplies> speaker, int collection){
-        while (true) {
+        int choose=-1;
+        do {
             Scanner scanner = new Scanner(System.in);
             System.out.print("Choose what do you want to update: \n Change info. \n "
                     + " 1. Rename an item \n  2. Change price \n  3. Change quantity \n  4. change days"
                     + "\n------------------------------------------------\n"+
-                    "  5. Add new item \n  6. Delete item  \n  0. Back  \n"
+                    "  5. Add new item \n  6. Delete item  \n 7. Exit  \n  0. Back  \n"
                     +  "\n------------------------------------------------"+"\nEnter number: ");
-            int choose;
+            
             try{
             	choose = scanner.nextInt();
             } catch(Exception e){
@@ -545,6 +429,24 @@ public class Project_lab251 {
                     break;
                 }
             }
-        }
+        } while (choose != 7);
+                
     }
+    
+    public static void serviceRating(){
+       System.out.println("Thank you for visiting our store.\nPlease rate your experience on a scale from 1(unhappy) to 10(happy): ");
+       Scanner scanner = new Scanner(System.in);
+       int rating= scanner.nextInt();
+       
+       if(rating == 10){
+           System.out.println("thank you for rating.");
+       }
+       else if(rating <10 || rating > 0){
+           scanner.nextLine();
+           System.out.println("How can we make your experience even better?");
+           String improve = scanner.nextLine();
+           System.out.println("thank you for rating.");
+       }
+   }
+    
 }

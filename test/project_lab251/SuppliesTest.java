@@ -5,7 +5,7 @@
  */
 package project_lab251;
 
-import Project_lab251.Supplies;
+
 import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -64,7 +64,7 @@ public class SuppliesTest {
         System.out.println("setPrice");
         int expResult = 330;
         item.setPrice(expResult);
-        int result=item.getPrice();
+        int result=(int)item.getPrice();
         assertEquals(expResult, result);
         
     }
@@ -75,7 +75,7 @@ public class SuppliesTest {
         System.out.println("getPrice");
         Supplies item = new Supplies("Round table for 6",100,1,2);
         int expResult = 100;
-        int result = item.getPrice();
+        int result = (int)item.getPrice();
         assertEquals(expResult, result);
     }
 
@@ -148,7 +148,7 @@ public class SuppliesTest {
         // Edit Price
         item.setPrice(60);
         int expResult1 = 60;
-        int result1 = item.getPrice();
+        int result1 = (int)item.getPrice();
         assertEquals(expResult1, result1);
         //add item
          Supplies item2=new Supplies(null,0,0,0);
@@ -166,7 +166,7 @@ public class SuppliesTest {
         int days = 2;
         item.setPrice(60);
         int expResult1 = 480;
-        int result1 = (item.getPrice() * quantity) * days ;
+        int result1 = (int)(item.getPrice() * quantity) * days ;
         assertEquals(expResult1, result1);
         
     }
